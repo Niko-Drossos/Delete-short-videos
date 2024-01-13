@@ -2,7 +2,7 @@ import sys
 from moviepy.editor import VideoFileClip
 import os
 
-def delete_short_videos(directory_path, max_duration=300):
+def delete_short_videos(directory_path, max_duration=180):
     deleted_count = 0
 
     for filename in os.listdir(directory_path):
@@ -32,7 +32,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     video_directory = sys.argv[1]
-    max_duration = sys.argv[2]
+    # max_duration = sys.argv[2]
 
     if not os.path.isdir(video_directory):
         print(f"Error: {video_directory} is not a valid directory.")
@@ -40,4 +40,4 @@ if __name__ == "__main__":
 
     
 
-    delete_short_videos(video_directory, max_duration)
+    delete_short_videos(video_directory)
